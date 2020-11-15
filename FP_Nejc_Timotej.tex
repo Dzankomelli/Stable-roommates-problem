@@ -37,7 +37,7 @@ Finančni praktikum \\
 
 \vspace{0.5cm}
 \LARGE
-\textbf{Stable rommate problem}
+\textbf{Stable roommate problem}
 
 \vspace{0.5 cm}
 
@@ -67,6 +67,30 @@ Mentorja: prof. dr. Sergio Cabello, asist. dr. Janoš Vidali
 \newpage
 
 \section{Uvod}
+V projektu pri finančnem praktikumu bova obravnavala \textit{stable roommate problem}.  Problem bova modelirala in poganjala ekspiremente v programskem jeziku Sage.\\
+
+\textit{Stable roommate problem}, znan tudi kot kratica \textbf{SR}, je eden izmed \textit{stable matching} problemov, katere sta prvič predstavila David Gale in Lloyd Shapely. Problem je dobil ime zaradi svoje praktične uporabe - kako razporediti ljudi v dvoposteljne sobe, glede na njihove preference.\\
+
+ Problem je sestavljen iz $2n$ "udeležencev", kjer ima vsak udeleženec seznam preferenc. Seznam je urejen po velikosti %ali je važno ali je naraščajoče ali padajoče
+in ima $2n - 1$ elementov, torej po eno vrednost za vsakega soudeleženca.\\
+%kakšen je lahko ta seznam? Ali je lahko večja razdalja večja preferenca?
+Ujemanje je množica $n$ disjunktnih parov udeležencev.
+Za ujemanje $M$ je par $\{m_{1}, m_{1}' \} \notin M$ \textit{blocking pair}, če zadošča naslednjim pogojem:
+\begin{itemize}
+	\item  $\{m_{1}, m_{1}' \}, \{m_{2}, m_{2}' \} \in M$,
+	\item $m_1$ preferira $m_2$ bolj kot $m_1'$,
+	\item $m_2$ preferira $m_1$ bolj kot $m_2'$.
+\end{itemize}
+Ujemanje $M$ je nestabilno, če zanj obstaja \textit{blocking pair}. Drugače je ujemanje $M$ stabilno.\\
+Cilj SR je najti stabilno ujemanje ali pokazati, da nobeno ne obstaja. Čeprav obstajajo SR problemi, ki nimajo stabilnega ujemanja, se je razvil algoritem s časovno zahtevnostjo $O(n^2)$, ki bodisi najde stabilno ujemanje, bodisi ugotovi, da za dani primer ne obstaja nobeno stabilno ujemanje.\\
+
+V projektu bova sprogramirala algoritem, ki reši dani problem v polinomskem času. Nato bova v  kvadratu naključno izbrala $2n$ točk in seštela vsoto razdalj med točkami v paru. Ugotovila bova, ali se vsota povečuje, ali zmanjšuje, ko povečujeva n.
+
+
+
+
+
+
 
 
 \end{document}
