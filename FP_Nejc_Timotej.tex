@@ -71,8 +71,8 @@ V projektu pri finančnem praktikumu bova obravnavala \textit{Stable roommate pr
 
 \textit{Stable roommate problem}, znan tudi kot kratica \textbf{SR}, je eden izmed \textit{stable matching} problemov, katere sta prvič predstavila David Gale in Lloyd Shapely. Problem je dobil ime zaradi svoje praktične uporabe - kako razporediti ljudi v dvoposteljne sobe, glede na njihove preference.\\
 
- Problem je sestavljen iz $2n$ "udeležencev", kjer ima vsak udeleženec seznam preferenc. Seznam ima $2n - 1$ elementov, torej po eno vrednost za vsakega soudeleženca, kjer vsak udeleženec predstavljen točko v metričnem prostoru, njegov seznam pa so urejene dolžine do ostalih soudeležencev.\\
-%kakšen je lahko ta seznam? Ali je lahko večja razdalja večja preferenca?
+Problem je sestavljen iz $2n$ "udeležencev", kjer ima vsak udeleženec seznam preferenc s $2n - 1$ elementi, torej po eno vrednost za vsakega soudeleženca. Vsak udeleženec predstavljen točko v metričnem prostoru, njegov seznam pa so urejene dolžine do ostalih soudeležencev.\\
+
 Ujemanje je množica $n$ disjunktnih parov udeležencev.
 Za ujemanje $M$ je par $\{m_{1}, m_{1}' \} \notin M$ \textit{blocking pair}, če zadošča naslednjim pogojem:
 \begin{itemize}
@@ -80,9 +80,9 @@ Za ujemanje $M$ je par $\{m_{1}, m_{1}' \} \notin M$ \textit{blocking pair}, če
 	\item $m_1$ preferira $m_2$ bolj kot $m_1'$,
 	\item $m_2$ preferira $m_1$ bolj kot $m_2'$.
 \end{itemize}
-Oziroma če povemo z besedami, \textit{blockin pair} nastane, če se imata vsaj dva udeleženca, ki nista v paru, pri ujemanju raje, kot s svojim partnerjem. \\
-
+Oziroma če povemo z besedami, \textit{blockin pair} nastane, če se imata vsaj dva udeleženca, ki nista v paru, pri ujemanju raje, kot s svojim partnerjem.
 Ujemanje $M$ je nestabilno, če zanj obstaja \textit{blocking pair}. Drugače je ujemanje $M$ stabilno.\\
+
 Cilj SR je najti stabilno ujemanje ali pokazati, da nobeno ne obstaja. S časoma so uspeli razviti algoritem s časovno zahtevnostjo $O(n^2)$, ki bodisi najde stabilno ujemanje, bodisi ugotovi, da za dani primer ne obstaja nobeno stabilno ujemanje.\\
 
 Stable roommate problem je v splošnem lahko uporabljen za ujemanje opazovanj in objektov pri nalogi razvrščanja. Na primer v življenjskem primeru iskanje primernega sostanovalca, so lahko le-ti predstavljeni po točkah v nekem prostoru lastnosti: koordinatna os prostora je lahko najprimernejši čas za spanje, želena raven urejenosti prostora, število zabav/piv na semester, itd.. Povsem logično je sklepati, da bo izbran udeleženec tisti, ki bo imel podobne lastnosti. \\
