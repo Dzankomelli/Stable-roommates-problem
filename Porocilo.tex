@@ -14,6 +14,8 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{float}
+\usepackage{graphicx}
+
 
 \usepackage{enumerate}
 \setlength{\parindent}{0mm}
@@ -101,8 +103,12 @@ V nadaljevanju projekta bova sledeila sledečim korakom:
 
 \section{Opis problema}
 \textit{Stable roomate problem} je problem v katerem želimo poiskati stabilno ujemanje udeležencev v problemu. Vsak udeleženec ima seznam preferenc do drugih udeležencev. Seznam je urejen po velikosti od najvišje preference pa vse do najnižje. Če bi želeli problem predstaviti v realnosti, si lahko mislimo, da imamo posameznika, ki si želi poiskati sostanovalca. Glede na njegove želje bo potencialne sostanovalce uredil glede na svoje preference in nato izbral posameznika z najvišjo preferenco.\\
-
 V projektu pa sva obravnavala enostavnejšo verzijo osnovnega problema, in sicer \textit{Geometric stable roomate problem}. V tem problemu so udeleženci predstavljeni kot točke v ravnini, kjer lahko te točke izberemo iz poljubno omejenega območja ali pa točke izbiramo kar iz celotne ravnine. V najinem projektu sva točke izbrala iz kvadrata velikosti 1x1. Preference so tukaj zelo preproste, saj so podane le kot razdalja do točk. Tako manjša razadlja do točke pomeni večjo preferenco. V tem problemu želiva poiskati stabilne pare, ki ustrezajo seznamu preferenc. \\
+
+\begin{center}
+\includegraphics{rdece_tocke.png}
+\end{center}
+
 
 \pagebreak
 \section{Glavne ideje problema in psevdokoda}
@@ -122,13 +128,40 @@ Pri pregledu pravilnosti reševanja problema sva ob koncu naletela na problem iz
 
 \pagebreak
 \section{Eksperimentiranje z algoritmom}
-Za eksperimentiranje z najinim algoritmom sva si izbrala računanje vsote razdalj med točkami v izbranem območju in preverila kako se vsota obnaša glede na število točk in glede na območje, ki sva ga izbrala. \\
+Za eksperimentiranje z najinim algoritmom sva si izbrala računanje vsote razdalj med točkami v izbranem območju in preverila kako se vsota obnaša glede na število točk, ki jih izbereva, in glede na območje, ki sva ga izbrala. Za ta namen sva sestavila funkciji \textit{vsota_razdalj} in \textit{razlicne_vsote}. Funkcija  \textit{vsota_razdalj} izračuna razdaljo med vsemi točkami, ki nostopajo v paru, tako da po vrsti gleda razdalje točk v paru in jih sešteva. Funkcijo \textit{razlicne_vsote} pa sva sestavila z namenom, da opazujeva eksperiment in sicer naju je zanimalo, kako se vsote obnašajo, ko povečujemo število točk. \\
+\subsection{Eksperimentiranje v kvadratu velikosti 1x1}
+Pri opazovanju gibanja števila vsote sva dobila spodnjo funkcijo.\\
+\begin{center}
+\includegraphics{kvadrat_1x1.png}
+\end{center}
+Lahko opazimo, da vsote naraščajo skupaj s številom točk. Seveda v nekaterih primerih prihaja do manjših odstopanj, vendar je opazno, da vsote rastejo.
 
+\subsection{Eksperimentiranje v krogu s polmerom r}
+V drugem primeru sva definirala točke znotraj kroga s polmerom r, kjer sva polmer r izbrala na začetku. Tu lahko eksperimentiramo na več različnih načinov:
+\begin{itemize}
+	\item povečujemo število izbranih točk pri dani izbiri r=1
+\begin{center}
+\includegraphics{krog_s_danim_polmerom.png}
+\end{center}
+Opazimo, da tudi v tem primeru vsote rastejo enakomerno z višanjem števila izbranih točk.
 
+	\item povečujemo r pri dani izbiri n=10
 
+	
+\end{itemize}
 
+\newpage
 
-
+\subsection{Eksperimentiranje s kvadratom in krogom}
+V tem razdelku, bi rada opazovala kako različna območja (v najinem primeru kvadrat in krog), ki imajo enako površino, vplivajo na vsoto razdalj vseh točk v paru. Za ta primer sva si izbrala kvadrat velikosti 1x1, na drugi strani pa sva izbrala krog s polmerom r=1/sqrt(pi). Tako sva dobila območji, ki imata enako ploščino. Sedaj bomo lahko videli ali oblika območja vpliva na vsoto.\\
+\begin{center}
+\includegraphics{primerjava_krog_kvadrat.png}
+\end{center}
+Na sliki so z rdečo barvo označene vsote točk, ki ležijo v kvadratu, z modro pa točke, ki ležijo v krogu. Opazimo lahko, da so vsote večje v krogih kot v kvadratih.\\
+Če pa pogledamo še spodnjo sliko pa lahko še bolj nazorno opazimo, da vsote točk v krogu tudi hitreje naraščajo.
+\begin{center}
+\includegraphics{primerjava_krog_kvadrat_2.png}
+\end{center}
 
 
 \end{document}
