@@ -123,8 +123,12 @@ Do sedaj sva zgenerirala slovar v katerem imava vse točke in urejen seznam pref
 \end{itemize}
 
 \pagebreak
-\section{Reševanje problema izenačenja}
-Pri pregledu pravilnosti reševanja problema sva ob koncu naletela na problem izenačenja. Nastopi, ko pride do pojava, ko ima poljubna točka enako razdaljo do dveh drugih točk v ombočju. To pomeni, da ima enako preferenco do dveh točk. Najin algoritem pri uporabi funkcije \textit{preference} uredi razdaljo po velikosti, če pa se pojavi problem izenačenja pa kot prvo točko navede tisto, ki je prva ko se funkcija sprehodi skozi ključe \textit{slovarja razdalj}. Zato kasneje, ko pridemo do reševanja problema s funkcijama \textit{Najkrajsa} in \textit{Vsi_pari} naletimo na problem, ko funkciji pogledata le prvo preferenco, ne upoštevata pa možnost izenačenja. Tako sva bila primorana algoritem prilagoditi tudi za primer izenačenja. \\
+\section{Robni pogoji}
+V procesu preverjanja pravilnosti algoritma, sva definirala tudi nekaj robnih primerov, v katerih sva preverila zmožnosti najinega algoritma. Ti primeri so:
+\begin{itemize}
+	\item kvadrat točk: v tem primeru sva si za točke izbrala robove kvadrata (npr. tocke (0.1,0.1),(0.1,0.2),(0.2,0.1),(0.2,0.2)). V tem primeru je vsaka točka enako oddaljena še do dveh točk
+	\item točke na vodoravni premici: tu sva točka izbrala tako, da ležijo na premici y=0.1, na x osi pa je njihova razdalja enaka 0.1. 
+\end{itemize} 
 
 \pagebreak
 \section{Eksperimentiranje z algoritmom}
@@ -138,17 +142,12 @@ Lahko opazimo, da vsote naraščajo skupaj s številom točk. Seveda v nekaterih
 
 \subsection{Eksperimentiranje v krogu s polmerom r}
 V drugem primeru sva definirala točke znotraj kroga s polmerom r, kjer sva polmer r izbrala na začetku. Tu lahko eksperimentiramo na več različnih načinov:
-\begin{itemize}
-	\item povečujemo število izbranih točk pri dani izbiri r=1
+ povečujemo število izbranih točk pri dani izbiri r=1
 \begin{center}
 \includegraphics{krog_s_danim_polmerom.png}
 \end{center}
 Opazimo, da tudi v tem primeru vsote rastejo enakomerno z višanjem števila izbranih točk.
-
-	\item povečujemo r pri dani izbiri n=10
-
 	
-\end{itemize}
 
 \newpage
 
@@ -163,5 +162,10 @@ Na sliki so z rdečo barvo označene vsote točk, ki ležijo v kvadratu, z modro
 \includegraphics{primerjava_krog_kvadrat_2.png}
 \end{center}
 
-
+\subsection{Eksperimentiranje s kocko in sfero}
+Za konec pa sva pogledala še območja oblike 3D. Začela sva s kocko z robom dolzine 1. Videla sva, da se tudi v tem primeru vsote povečujejo skupaj z večanjem števila točk. Enako sva ponovila na sferi z enakim volumnom kot pri kocki. Gibanje vsot za oba primera je prikazano na spodnji sliki, kjer rdeča črta označuje kocko.
+\begin{center}
+\includegraphics{primerjava_kocka_sfera.png}
+\end{center}
+Lahko vidimo, da so tudi v 3D vsote sfere večje od vsot kocke.
 \end{document}
