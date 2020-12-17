@@ -94,7 +94,7 @@ V projektu  sva obravnavala enostavnejšo verzijo osnovnega problema, in sicer \
 Točke v kvadratu sva določila tako, da sva generirala x in y koordinato posamezne točke in jih shranila v \textit{slovar točk}, kjer ključ slovarja predstavljajo ime točke (npr. \textit{tocka_0}), vrednost pa koordinate točke. Vrednosti slovarja so oblike (\textit{x,y}). V nadaljevanju projekta bova poskusila točke izbirati tudi iz območij drugačne oblike, če bo le možno tudi točke iz neomejenega območja.\\
 
 Razdalje med točkami sva izračunala s pomočjo Pitagorovega izreka. S funkcijo \textit{for} sva se sprehodila čez vse ključe v \textit{slovarju točk} in oblikovala novi slovar imenovan \textit{slovar razdalj}, v katerem je ključ slovarja ponovno ime točke, vrednosti pa vsebujejo seznam razdalj do posameznih točk. Prvotno sva računanje Pitagorovega izreka  razdelila na 3 podprimere. Kasneje sva našla hitrejši način, ki za izračun razdalje porabi manj časa.\\
-V nadaljevanju sva s pomočjo funkcije \textit{preference} uredila \textit{slovar razdalj} glede na razdaljo. Tako sva dobila seznam tulpov, urejen po velikosti od najkrajše do najdaljše razdalje.  \\
+V nadaljevanju sva s pomočjo funkcije \textit{preference} uredila \textit{slovar razdalj} glede na razdaljo. Tako sva dobila seznam tuplov, urejen po velikosti od najkrajše do najdaljše razdalje.  \\
 
 Do sedaj sva zgenerirala slovar v katerem imava vse točke in urejen seznam preferenc.  V tem delu projekta pa nastopi reševanje problema. Ideja reševanja problema je bila, da bi se sprehodila čez vse točke v slovarju in pri vsaki točki preverila njene preference. Ko bi našla najkrajšo razdaljo med dvema točkama, bi ti dve točki povezala v par in posledično na koncu pridobila ujemajoče pare. Algoritem za reševanje te ideje pa sva sestavila iz dveh funkcij:
 \begin{itemize}
@@ -104,7 +104,7 @@ Do sedaj sva zgenerirala slovar v katerem imava vse točke in urejen seznam pref
 
 
 \section{Robni pogoji}
-V procesu preverjanja pravilnosti algoritma, sva definirala tri "robne primere", v katerihbi lahko prišlo do težav z algoritmom. Pomembno je omeniti, da so vsi primeri narejeni le za točke, ki so generirane v kvadratu. Ti primeri so:
+V procesu preverjanja pravilnosti algoritma, sva definirala tri "robne primere", v katerih bi lahko prišlo do težav z algoritmom. Pomembno je omeniti, da so vsi primeri narejeni le za točke, ki so generirane v kvadratu. Ti primeri so:
 \begin{itemize}
 \item Točke so razporejene v kvadrat:\\
 	primer_1 = \{'tocka_0': (0.1, 0.1), 'tocka_1': (0.2, 0.1),  'tocka_2': (0.1,
@@ -136,7 +136,7 @@ Opazimo lahko, da vsote naraščajo skupaj s številom točk. Seveda v nekaterih
 
 \subsection{Eksperimentiranje v krogu s polmerom $r$}
 V drugem primeru sva definirala točke znotraj kroga s polmerom $r$, kjer sva polmer $r$ izbrala na začetku. Tu lahko eksperimentiramo na več različnih načinov.
-Na primer povečujemo število izbranih točk pri dani izbiri $r$=1.
+Na primer povečujemo število izbranih točk pri dani izbiri $r = 1$.
 \begin{center}
 \includegraphics{krog_s_danim_polmerom.png}
 \end{center}
@@ -145,7 +145,7 @@ Opazimo, da tudi v tem primeru vsote rastejo enakomerno z višanjem števila izb
 \newpage
 
 \subsection{Eksperimentiranje s kvadratom in krogom}
-V tem razdelku sva opazovala, kako različni območji (v najinem primeru kvadrat in krog), ki ima enako ploščino, vplivata na vsoto razdalj vseh točk v paru. Za ta primer sva si izbrala kvadrat velikosti 1x1, na drugi strani pa sva izbrala krog s polmerom r=1/sqrt(pi). Tako sva dobila območji, ki imata enako ploščino.\\
+V tem razdelku sva opazovala, kako različni območji (v najinem primeru kvadrat in krog), ki ima enako ploščino, vplivata na vsoto razdalj vseh točk v paru. Za ta primer sva si izbrala kvadrat velikosti $1$x$1$, na drugi strani pa sva izbrala krog s polmerom $ r=\dfrac{1}{\sqrt{\pi}}$. Tako sva dobila območji, ki imata enako ploščino.\\
 
 Na sliki so z rdečo barvo označene vsote točk, ki ležijo v kvadratu, z modro pa točke, ki ležijo v krogu.\\
 \begin{center}
